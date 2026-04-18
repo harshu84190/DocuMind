@@ -1,0 +1,40 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+
+# Distribution / packaging
+build/
+dist/
+wheels/
+*.egg-info/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment variables
+.env
+
+# OS files
+.DS_Store
+
+# Logs
+*.log
+
+# IDE / Editor
+.vscode/
+.idea/
+
+# Python version
+.python-version
+
+# Lock files (optional – depends on your workflow)
+uv.lock
+
+# Data files (be careful here 👇)
+# Uncomment if you DON'T want to track PDFs
+*.pdf
+
+
+*.code-workspace
