@@ -185,6 +185,11 @@ else:
                     print("="*60 + "\n")
                     # ==========================================
                     
+                    with st.expander("🔍 View Retrieved Context Chunks"):
+                        for i, doc in enumerate(search_results):
+                            st.markdown(f"**Chunk {i+1} from `{doc.metadata.get('source', 'Unknown')}`**")
+                            st.info(doc.page_content)
+                    
                     context = "\n\n".join([doc.page_content for doc in search_results])
                     
                     prompt = f"Context: {context}\n\nQuestion: {user_query}"
