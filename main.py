@@ -172,23 +172,18 @@ else:
                     # ==========================================
                     # 🔍 BACKEND OBSERVABILITY LOGS
                     # ==========================================
-                    print("\n" + "="*60)
-                    print(f"🤖 USER QUERY: {user_query}")
-                    print(f"📚 RETRIEVED {len(search_results)} CHUNKS FROM PINECONE:")
+                    print("\n" + "="*60, flush=True)
+                    print(f"🤖 USER QUERY: {user_query}", flush=True)
+                    print(f"📚 RETRIEVED {len(search_results)} CHUNKS FROM PINECONE:", flush=True)
                     
                     for i, doc in enumerate(search_results):
-                        print("-" * 60)
-                        print(f"--- CHUNK {i+1} ---")
-                        print(f"METADATA: {doc.metadata}") 
-                        print(f"CONTENT: {doc.page_content}")
+                        print("-" * 60, flush=True)
+                        print(f"--- CHUNK {i+1} ---", flush=True)
+                        print(f"METADATA: {doc.metadata}", flush=True) 
+                        print(f"CONTENT: {doc.page_content}", flush=True)
                     
-                    print("="*60 + "\n")
+                    print("="*60 + "\n", flush=True)
                     # ==========================================
-                    
-                    with st.expander("🔍 View Retrieved Context Chunks"):
-                        for i, doc in enumerate(search_results):
-                            st.markdown(f"**Chunk {i+1} from `{doc.metadata.get('source', 'Unknown')}`**")
-                            st.info(doc.page_content)
                     
                     context = "\n\n".join([doc.page_content for doc in search_results])
                     
