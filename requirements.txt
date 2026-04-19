@@ -22,3 +22,8 @@ sentence-transformers
 torchvision
 
 docling
+
+
+supabase
+
+langchain-groq
